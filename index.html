@@ -16,7 +16,7 @@
       } else{
         navigator.serviceWorker.getRegistration().then(function(reg) {
           if (!reg) {
-            navigator.serviceWorker.register('/sw.js');
+            navigator.serviceWorker.register('sw.js');
           }
         });
 

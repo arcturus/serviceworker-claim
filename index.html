@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Index</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <p id="message"></p>
+      <a href="page.html">Go to page</a>
+    </body>
+    <script>
+      var message = document.getElementById('message');
+      if (!navigator.serviceWorker) {
+        message.textContent = 'No serviceWorker support :(';
+      } else{
+        navigator.serviceWorker.getRegistration().then(function(reg) {
+          if (!reg) {
+            navigator.serviceWorker.register('/sw.js');
+          }
+        });
+
+        //Listen for any change on the controller
+        navigator.serviceWorker.addEventListener('controllerchange', function(evt) {
+          console.log('Controller change ::: ', evt);
+        });
+      }
+    </script>
+</html>

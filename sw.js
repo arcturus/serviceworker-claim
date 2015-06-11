@@ -1,4 +1,4 @@
-importScripts('/bower_components/serviceworkerware/dist/sww.js');
+importScripts('bower_components/serviceworkerware/dist/sww.js');
 
 var worker = new ServiceWorkerWare();
 

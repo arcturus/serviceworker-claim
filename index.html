@@ -23,6 +23,7 @@
         //Listen for any change on the controller
         navigator.serviceWorker.addEventListener('controllerchange', function(evt) {
           console.log('Controller change ::: ', evt);
+          message.textContent = 'Controller change caused by a claim';
         });
       }
     </script>
